@@ -2,20 +2,27 @@
 % Please edit documentation in R/ctab.r
 \name{ctab}
 \alias{ctab}
-\title{Pass a factor variable and return a contingency table by column percentages}
+\title{Pass a variable and return a contingency table by column percentages}
 \usage{
 ctab(vec)
 }
 \arguments{
-\item{vec}{Vector to be passed through. Must be a factor variable}
+\item{vec}{Vector to be passed through.}
 }
 \description{
-Pass a factor variable and return a contingency table by column percentages
+Use vector/variable as argument, and a contingency table by column percentages is returned as output.
+Function still works even if variable is not of factor class (unless it cannot be converted).
 }
 \examples{
-vec <- sample(c("Sandwich","Porridge","Muesli/cereal","Other","No breakfast"),2000,replace=TRUE,prob=c(0.2,0.15,0.25,0.15,.25))
-vec <- factor(vec)
-ctab(vec)
+Q12 <- sample(c("Sandwich","Porridge","Muesli/cereal","Other","No breakfast"),2000,replace=TRUE,prob=c(0.2,0.15,0.25,0.15,.25))
+Q12 <- factor(Q12)
+ctab(Q12)
+              Q   Prop
+1 Muesli/cereal  0.201
+2  No breakfast  0.249
+3         Other 0.1485
+4      Porridge  0.201
+5      Sandwich  0.249
 }
 \keyword{contingency}
 \keyword{table}
