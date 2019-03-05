@@ -16,7 +16,3 @@ tokenise_ngram(x, n = 2, collapse = " ")
 \description{
 Return all n-gram combinations with a character vector as input
 }
-\examples{
-tokenise_ngram("a c b e f")
-
-}

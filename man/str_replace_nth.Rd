@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_replace_nth.R
 \name{str_replace_nth}
 \alias{str_replace_nth}
-\title{Replace nth occurring value in a string}
+\title{Replace nth occurring pattern in a string}
 \usage{
 str_replace_nth(x, pattern, replacement, n)
 }

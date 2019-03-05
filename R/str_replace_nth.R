@@ -1,7 +1,7 @@
-#' Replace nth occurring value in a string
-#' 
+#' Replace nth occurring pattern in a string
+#'
 #' A more refined replacement function than str_replace() and str_replace_all()
-#' 
+#'
 #' @param x Pass string character
 #' @param pattern String containing characters to match
 #' @param replacement String containing to replace
