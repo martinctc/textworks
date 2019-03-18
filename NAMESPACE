@@ -3,6 +3,7 @@
 export(add_line_breaks)
 export(cap_first)
 export(nwords)
+export(sentence_case)
 export(str_replace_nth)
 export(str_right)
 export(tokenise_ngram)
