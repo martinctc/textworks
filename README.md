@@ -7,4 +7,16 @@ The aim of this package is to provide collection of such functions with more spe
 
 ---
 
+### Installation
+
+surveytoolbox is not release on CRAN (yet). 
+You can install the latest development version from GitHub with:
+
+```
+install.packages("devtools")
+devtools::install_github("martinctc/textworks")
+```
+
+---
+
 This package is currently still under development, so it does come with a health advice: if you do wish to use them - have a check and run through the examples before assimilating them into your analysis. 
