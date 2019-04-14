@@ -20,3 +20,7 @@ devtools::install_github("martinctc/textworks")
 ---
 
 This package is currently still under development, so it does come with a health advice: if you do wish to use them - have a check and run through the examples before assimilating them into your analysis. 
+
+---
+
+Also check out my [website](https://martinctc.github.io) for my other work and packages.
