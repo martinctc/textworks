@@ -18,7 +18,11 @@ devtools::install_github("martinctc/textworks")
 ```
 
 ---
+### Overview of Functions
 
+Work in progress...
+
+---
 This package is currently still under development, so it does come with a health advice: if you do wish to use them - have a check and run through the examples before assimilating them into your analysis. 
 
 ---
