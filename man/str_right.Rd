@@ -2,8 +2,7 @@
 % Please edit documentation in R/str_right.R
 \name{str_right}
 \alias{str_right}
-\title{Return the n number of characters from the right
-Wrapper convenience function}
+\title{Return the n number of characters from the right}
 \usage{
 str_right(x, n)
 }
@@ -13,6 +12,5 @@ str_right(x, n)
 \item{n}{Integer specifying the number of characters to return from the right.}
 }
 \description{
-Return the n number of characters from the right
 Wrapper convenience function
 }

@@ -6,6 +6,9 @@
 \usage{
 sentence_case(string)
 }
+\arguments{
+\item{string}{A vector of character string to pass through.}
+}
 \description{
 (^|\\.) matches start of string OR literally a fullstop
 \\s* matches whitespace symbols

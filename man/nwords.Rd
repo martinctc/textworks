@@ -4,7 +4,7 @@
 \alias{nwords}
 \title{Count the number of words in text string}
 \usage{
-nwords(string, pseudo = F)
+nwords(string, pseudo = FALSE)
 }
 \arguments{
 \item{string}{Pass text string here.}

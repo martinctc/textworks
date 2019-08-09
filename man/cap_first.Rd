@@ -7,7 +7,7 @@
 cap_first(string)
 }
 \arguments{
-\item{x}{String, or a character vector}
+\item{string}{String or character vector to pass through.}
 }
 \description{
 Capitalise the first letter of all words
