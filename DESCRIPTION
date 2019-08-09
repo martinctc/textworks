@@ -11,5 +11,7 @@ RoxygenNote: 6.1.1
 Imports:
 	jsonlite,
     tidyverse,
+    stringr,
+    purrr,
     httr,
     magrittr, tm, dplyr, tidytext, rlang
