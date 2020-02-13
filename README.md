@@ -27,6 +27,7 @@ Work in progress...
 - `sentence_case()` converts a string of text into sentence case.
 - `cap_all()` capitalises the first letter of all the words in a character string.
 - `str_right()` returns the _nth_ number of characters from the right, similar to the Excel function RIGHT(). For convenience, there is an equivalent `str_left()` for returning number of characters starting from the left. 
+- `rgb2hex()` provides a convenience wrapper around `rgb()` to convert RGB colour codes to HEX codes.
 
 ---
 This package is currently still under development, so it does come with a health advice: if you do wish to use them - have a check and run through the examples before assimilating them into your analysis. 
