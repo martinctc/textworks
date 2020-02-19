@@ -7,6 +7,9 @@
 #'
 #' @importFrom stringr str_sub
 #'
+#' @examples
+#' str_right("Wittgenstein", 5)
+#'
 #' @export
 str_right <- function(x, n){
   nx <- n-1

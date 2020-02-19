@@ -15,3 +15,7 @@ str_left(x, n)
 Wrapper convenience function
 Analagous to `str_right()`
 }
+\examples{
+str_left("Wittgenstein", 7)
+
+}

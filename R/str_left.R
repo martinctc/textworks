@@ -8,6 +8,9 @@
 #'
 #' @importFrom stringr str_sub
 #'
+#' @examples
+#' str_left("Wittgenstein", 7)
+#'
 #' @export
 str_left <- function(x, n){
   str_sub(x, 1, n)

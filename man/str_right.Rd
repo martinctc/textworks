@@ -14,3 +14,7 @@ str_right(x, n)
 \description{
 Wrapper convenience function
 }
+\examples{
+str_right("Wittgenstein", 5)
+
+}
