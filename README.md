@@ -1,4 +1,7 @@
 # textworks
+
+[![R build status](https://github.com/martinctc/textworks/workflows/R-CMD-check/badge.svg)](https://github.com/martinctc/textworks/actions)
+
 Useful functions for handling text data. 
 
 This is a curated collection of functions that I've either written or come across over the past years, in relation to text data handling. Packages such as stringr already make a lot of this work easier, enabling users to focus on the task at hand without having to bother with regular expressions.
