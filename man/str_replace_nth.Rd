@@ -11,8 +11,7 @@ str_replace_nth(x, pattern, replacement, n)
 
 \item{pattern}{String containing characters to match}
 
-\item{replacement}{String containing characters to replace. Must be the same
-length as `pattern`.}
+\item{replacement}{String containing characters to replace.}
 
 \item{n}{Nth term to be replaced}
 }
@@ -25,5 +24,7 @@ x <- "pineapplepie"
 str_replace_nth(x = x, pattern = "p", replacement = "q", n = 2)
 
 str_replace_nth(x = "pigpig", pattern = "pig", replacement = "dog", n = 2)
+
+str_replace_nth(x = "pigpig", pattern = "pig", replacement = "gy", n = 2)
 
 }

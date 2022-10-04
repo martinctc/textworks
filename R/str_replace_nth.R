@@ -5,8 +5,7 @@
 #'
 #' @param x Pass string character
 #' @param pattern String containing characters to match
-#' @param replacement String containing characters to replace. Must be the same
-#'   length as `pattern`.
+#' @param replacement String containing characters to replace.
 #' @param n Nth term to be replaced
 #'
 #' @examples
@@ -15,20 +14,19 @@
 #'
 #' str_replace_nth(x = "pigpig", pattern = "pig", replacement = "dog", n = 2)
 #'
+#' str_replace_nth(x = "pigpig", pattern = "pig", replacement = "gy", n = 2)
+#'
 #' @export
 str_replace_nth <- function(x, pattern, replacement, n) {
 
   # returns list of matched positions, only single value
   g <- gregexpr(pattern, x)[[1]][n]
 
-  # get total length of `pattern` minus 1
-  len_p <- nchar(pattern) - 1
-  len_r <- nchar(replacement) - 1
+  # get total length of `pattern`
+  len_p <- nchar(pattern)
+  len_r <- nchar(replacement)
 
-  if(len_p != len_r){
-    stop("`pattern` and `replacement` must be the same length")
-  }
-
+  # legacy
   s <- scan(text = gsub(pattern = "[()]", replacement = "", x = pattern),
             sep = "|",
             what = "")
@@ -40,6 +38,9 @@ str_replace_nth <- function(x, pattern, replacement, n) {
   # print(g)
   # print(g + len_p)
 
-  substr(x, g, g + len_p) <- replacement[match(substr(x, g, g + len_p), s)]
-  x
+  # substr(x, g, g + len_p) <- replacement[match(substr(x, g, g + len_p), s)]
+  # x
+  firsthalf <- substr(x, start = 1, stop = g - 1)
+  secondhalf <- substr(x, start = g + len_p, stop = nchar(x))
+  paste0(firsthalf, replacement, secondhalf)
 }
