@@ -16,11 +16,13 @@ str_replace_nth(x, pattern, replacement, n)
 \item{n}{Nth term to be replaced}
 }
 \description{
-A more refined replacement function than `str_replace()` and
-`str_replace_all()`
+Replaces the nth occurrence of a specified pattern in a string. This enables
+a more targetted way of replacing patterns compared to
+`stringr::str_replace()` and `stringr::str_replace_all()`.
 }
 \examples{
 x <- "pineapplepie"
+
 str_replace_nth(x = x, pattern = "p", replacement = "q", n = 2)
 
 str_replace_nth(x = "pigpig", pattern = "pig", replacement = "dog", n = 2)

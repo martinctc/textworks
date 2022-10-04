@@ -1,7 +1,10 @@
+#' @title
 #' Replace nth occurring pattern in a string
 #'
-#' A more refined replacement function than `str_replace()` and
-#' `str_replace_all()`
+#' @description
+#' Replaces the nth occurrence of a specified pattern in a string. This enables
+#' a more targetted way of replacing patterns compared to
+#' `stringr::str_replace()` and `stringr::str_replace_all()`.
 #'
 #' @param x Pass string character
 #' @param pattern String containing characters to match
@@ -10,6 +13,7 @@
 #'
 #' @examples
 #' x <- "pineapplepie"
+#'
 #' str_replace_nth(x = x, pattern = "p", replacement = "q", n = 2)
 #'
 #' str_replace_nth(x = "pigpig", pattern = "pig", replacement = "dog", n = 2)
