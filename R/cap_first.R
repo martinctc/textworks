@@ -1,3 +1,4 @@
+#' @title
 #' Capitalise the first letter of all words
 #'
 #' @param string String or character vector to pass through.

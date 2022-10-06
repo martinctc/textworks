@@ -1,3 +1,4 @@
+#' @title
 #' Count the number of words in text string
 #'
 #' @param string Pass text string here.

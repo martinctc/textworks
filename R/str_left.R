@@ -1,7 +1,9 @@
-#' Return the n number of characters from the left
+#' @title
+#' Return the `n` number of characters from the left
 #'
-#' Wrapper convenience function
-#' Analagous to `str_right()`
+#' @description
+#' This is a convenience wrapper function around `str_sub()`, and is analagous
+#' to `str_right()`.
 #'
 #' @param x String character to pass through
 #' @param n Integer specifying the number of characters to return from the left.

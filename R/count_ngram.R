@@ -1,3 +1,4 @@
+#' @title
 #' Summarise the counts of a specified ngram in character vector
 #'
 #' @param text Character string vector to pass through
@@ -21,5 +22,5 @@ count_ngram <- function(text,count_col = "count", n = 2){
     dplyr::count(phrase, sort = TRUE) %>%
     rename(!!sym(count_col):="n") -> ngram_df
 
-  return(ngram_df)
+  ngram_df
 }

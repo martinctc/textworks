@@ -12,7 +12,8 @@ str_right(x, n)
 \item{n}{Integer specifying the number of characters to return from the right.}
 }
 \description{
-Wrapper convenience function
+This is a convenience wrapper function around `str_sub()`, and is analagous
+to `str_left()`.
 }
 \examples{
 str_right("Wittgenstein", 5)

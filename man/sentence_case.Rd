@@ -11,11 +11,12 @@ sentence_case(string)
 }
 \description{
 (^|\\.) matches start of string OR literally a fullstop
-\\s* matches whitespace symbols
-(.) matches any character but a new line
-\\1 Back-references Group 1
-\\2 Turns Group 2 into uppercase
+  - `\\s*` matches whitespace symbols
+  - `(.)` matches any character but a new line
+  - `\\1` Back-references Group 1
+  - `\\2` Turns Group 2 into uppercase
 }
 \examples{
 sentence_case("i'm not hundred percent sure. why not. cool!")
+
 }

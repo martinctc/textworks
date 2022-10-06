@@ -1,3 +1,4 @@
+#' @title
 #' Sorts letters in a character string by alphabetical order
 #'
 #' @param string A vector of character string to pass through.
