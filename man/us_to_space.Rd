@@ -7,7 +7,7 @@
 us_to_space(text)
 }
 \arguments{
-\item{text}{String to replace all occurrences of `_` with a single space}
+\item{text}{String to replace all occurrences of \verb{_} with a single space}
 }
 \value{
 Returns a formatted string.

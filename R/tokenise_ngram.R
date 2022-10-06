@@ -13,11 +13,16 @@
 #' @examples
 #' tokenise_ngram(text = c("apple pies and pear pies", "steak pies and kidney pies"))
 #'
+#' @import tm
+#'
 #' @export
-tokenise_ngram <- function(text, n = 2, collapse = " ") {
+tokenise_ngram <- function(text, n = 2, collapse = " "){
+
+  input <- text
+
   unlist(
     lapply(
-      NLP::ngrams(NLP::words(text), n),
+      NLP::ngrams(x = NLP::words(x = input), n = n),
       paste,
       collapse = collapse),
     use.names = FALSE

@@ -18,7 +18,7 @@ Returns a formatted string containing HEX code.
 }
 \description{
 Suited for using in viz packages like {wordcloud2}. A convenience wrapper
-around `rgb()`.
+around \code{rgb()}.
 }
 \examples{
 rgb2hex(0,144,218)

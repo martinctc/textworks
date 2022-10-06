@@ -7,7 +7,7 @@
 cap_first(text)
 }
 \arguments{
-\item{string}{String or character vector to pass through.}
+\item{text}{String or character vector to pass through.}
 }
 \value{
 Returns a formatted string.

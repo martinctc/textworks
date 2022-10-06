@@ -9,13 +9,13 @@ add_line_breaks(text, nword = NULL, nchar = NULL)
 \arguments{
 \item{text}{Pass text string here.}
 
-\item{nword}{numeric, defaults to NULL. The maximum number of words allowed in the first line. Only one
-argument from either `nword` or `nchar` is used, otherwise an error is
-generated.}
+\item{nword}{numeric, defaults to \code{NULL}. The maximum number of words allowed
+in the first line. Only one argument from either \code{nword} or \code{nchar} is
+used, otherwise an error is generated.}
 
-\item{nchar}{numeric, defaults to NULL. Number of character units by which the
-next space would be replaced with `\n` to move text to next line. Only one
-argument from either `nword` or `nchar` is used, otherwise an error is
+\item{nchar}{numeric, defaults to \code{NULL}. Number of character units by which
+the next space would be replaced with \verb{\\n} to move text to next line. Only
+one argument from either \code{nword} or \code{nchar} is used, otherwise an error is
 generated.}
 }
 \value{
@@ -23,9 +23,9 @@ Returns a formatted string.
 }
 \description{
 Wrap text in visualizations according to a preset character
-  threshold, or the maximum number of words allowed in the first line. The
-  next space in the string is replaced with `\n`, which will render as next
-  line in plots and messages.
+threshold, or the maximum number of words allowed in the first line. The
+next space in the string is replaced with \verb{\\n}, which will render as next
+line in plots and messages.
 }
 \examples{
 tea_text <- "This is a lovely cup of tea"

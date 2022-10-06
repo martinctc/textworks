@@ -4,10 +4,11 @@ Version: 0.1.0
 Authors@R: person("Martin", "Chan", email = "martinctc@hotmail.com", role = c("aut", "cre"))
 Description: Clean, process, and wrangle text easily with a set of convenience functions. This helps with scenarios such as processing strings for visualization or cleaning up text data at scale.
 Depends: R (>= 3.3.3)
-License: GPL-3
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.2.1
+Roxygen: list(markdown = TRUE)
 Imports:
 	jsonlite,
   tidyverse,
@@ -17,4 +18,6 @@ Imports:
   httr,
   magrittr,
   dplyr,
-  rlang
+  rlang,
+  scales,
+  tm

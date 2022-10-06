@@ -21,7 +21,7 @@ Returns a formatted string.
 \description{
 Replaces the nth occurrence of a specified pattern in a string. This enables
 a more targetted way of replacing patterns compared to
-`stringr::str_replace()` and `stringr::str_replace_all()`.
+\code{stringr::str_replace()} and \code{stringr::str_replace_all()}.
 }
 \examples{
 x <- "pineapplepie"

@@ -10,7 +10,7 @@ str_arrange(text, decreasing = FALSE)
 \item{text}{A vector of character string to pass through.}
 
 \item{decreasing}{logical, specifies whether sort is increasing or decreasing.
-See `sort()` (base)}
+See \code{sort()} (base)}
 }
 \description{
 Sorts letters in a character string by alphabetical order

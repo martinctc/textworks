@@ -9,14 +9,14 @@ wrap(text, wrapper = "\\"")
 \arguments{
 \item{text}{string to be add 'wrapping' characters.}
 
-\item{wrapper}{string to be added around value supplied in `text`.}
+\item{wrapper}{string to be added around value supplied in \code{text}.}
 }
 \value{
 Returns a formatted string.
 }
 \description{
 Add a character at the start and end of a
-  character string, where the default behaviour is to add a double quote.
+character string, where the default behaviour is to add a double quote.
 }
 \examples{
 wrap(text = "lol")

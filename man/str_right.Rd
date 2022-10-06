@@ -15,8 +15,8 @@ str_right(text, n)
 Returns a formatted string.
 }
 \description{
-This is a convenience wrapper function around `str_sub()`, and is analagous
-to `str_left()`.
+This is a convenience wrapper function around \code{str_sub()}, and is analagous
+to \code{str_left()}.
 }
 \examples{
 str_right("Wittgenstein", 5)

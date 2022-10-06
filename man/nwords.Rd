@@ -10,7 +10,7 @@ nwords(text, pseudo = FALSE)
 \item{text}{Pass text string here.}
 
 \item{pseudo}{Determines whether groups of special characters are matched.
-Defaults to `FALSE` (not matched)}
+Defaults to \code{FALSE} (not matched)}
 }
 \value{
 numeric value containing count of words.

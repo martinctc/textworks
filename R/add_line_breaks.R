@@ -8,13 +8,13 @@
 #'
 #' @param text Pass text string here.
 #'
-#' @param nword numeric, defaults to NULL. The maximum number of words allowed in the first line. Only one
-#'   argument from either `nword` or `nchar` is used, otherwise an error is
-#'   generated.
+#' @param nword numeric, defaults to `NULL`. The maximum number of words allowed
+#'   in the first line. Only one argument from either `nword` or `nchar` is
+#'   used, otherwise an error is generated.
 #'
-#' @param nchar numeric, defaults to NULL. Number of character units by which the
-#'   next space would be replaced with `\n` to move text to next line. Only one
-#'   argument from either `nword` or `nchar` is used, otherwise an error is
+#' @param nchar numeric, defaults to `NULL`. Number of character units by which
+#'   the next space would be replaced with `\n` to move text to next line. Only
+#'   one argument from either `nword` or `nchar` is used, otherwise an error is
 #'   generated.
 #'
 #' @return Returns a formatted string.

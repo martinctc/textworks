@@ -10,20 +10,23 @@ count_ngram(text, count_col = "count", n = 2)
 \item{text}{character. Vector containing text to split into n-grams and count.}
 
 \item{count_col}{A string vector for the name of the count column. Defaults
-to `"count"`}
+to \code{"count"}}
 
 \item{n}{Specify n of ngram}
 }
 \value{
 data frame with the count results, containing two columns:
-  - `text`: n-grams identified
-  - `count` (unless otherwise specified)
+\itemize{
+\item \code{ngrams}: n-grams identified
+\item \code{count} (unless otherwise specified)
+}
 }
 \description{
 Supply a character vector and return a data frame summarising
 all the unique n-grams and their counts in the character vector.
 }
 \examples{
-count_ngram(text = c("The quick brown fox jumped over the lazy dog"))
+count_ngram("The quick brown fox jumped over the lazy dog")
+
 
 }

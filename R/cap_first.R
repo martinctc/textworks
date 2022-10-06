@@ -1,7 +1,7 @@
 #' @title
 #' Capitalise the first letter of all words
 #'
-#' @param string String or character vector to pass through.
+#' @param text String or character vector to pass through.
 #'
 #' @return Returns a formatted string.
 #'

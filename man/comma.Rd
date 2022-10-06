@@ -16,7 +16,7 @@ Returns a formatted string.
 Takes a numeric value and returns a character value
 which is rounded to the whole number, and adds a comma
 separator at the thousands. A convenient wrapper function
-around `scales::label_comma()`.
+around \code{scales::label_comma()}.
 }
 \examples{
 comma(1000 * 1000)

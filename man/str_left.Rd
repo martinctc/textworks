@@ -2,7 +2,7 @@
 % Please edit documentation in R/str_left.R
 \name{str_left}
 \alias{str_left}
-\title{Return the `n` number of characters from the left}
+\title{Return the \code{n} number of characters from the left}
 \usage{
 str_left(text, n)
 }
@@ -15,8 +15,8 @@ str_left(text, n)
 Returns a formatted string.
 }
 \description{
-This is a convenience wrapper function around `str_sub()`, and is analagous
-to `str_right()`.
+This is a convenience wrapper function around \code{str_sub()}, and is analagous
+to \code{str_right()}.
 }
 \examples{
 str_left("Wittgenstein", 7)

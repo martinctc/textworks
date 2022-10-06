@@ -14,10 +14,12 @@ Returns a formatted string.
 }
 \description{
 (^|\\.) matches start of string OR literally a fullstop
-  - `\\s*` matches whitespace symbols
-  - `(.)` matches any character but a new line
-  - `\\1` Back-references Group 1
-  - `\\2` Turns Group 2 into uppercase
+\itemize{
+\item \verb{\\\\s*} matches whitespace symbols
+\item \code{(.)} matches any character but a new line
+\item \verb{\\\\1} Back-references Group 1
+\item \verb{\\\\2} Turns Group 2 into uppercase
+}
 }
 \examples{
 sentence_case("i'm not hundred percent sure. why not. cool!")
