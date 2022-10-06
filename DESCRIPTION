@@ -1,6 +1,6 @@
 Package: textworks
 Title: All-in-one package for working with text data
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: person("Martin", "Chan", email = "martinctc@hotmail.com", role = c("aut", "cre"))
 Description: Make text wrangling easier with a set of convenience functions. 
 Depends: R (>= 3.3.3)
