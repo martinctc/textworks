@@ -14,8 +14,8 @@ rgb2hex(r, g, b)
 \item{b}{Value for b}
 }
 \description{
-Suited for using in viz packages like {wordcloud2}
-A convenience wrapper around `rgb()`
+Suited for using in viz packages like {wordcloud2}. A convenience wrapper
+around `rgb()`.
 }
 \examples{
 rgb2hex(0,144,218)
