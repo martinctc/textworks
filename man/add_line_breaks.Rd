@@ -4,10 +4,10 @@
 \alias{add_line_breaks}
 \title{Split long strings into multiple lines by adding line breaks}
 \usage{
-add_line_breaks(string, nword = NULL, nchar = NULL)
+add_line_breaks(text, nword = NULL, nchar = NULL)
 }
 \arguments{
-\item{string}{Pass text string here.}
+\item{text}{Pass text string here.}
 
 \item{nword}{numeric, defaults to NULL. The maximum number of words allowed in the first line. Only one
 argument from either `nword` or `nchar` is used, otherwise an error is
@@ -27,16 +27,16 @@ Wrap text in visualizations according to a preset character
 \examples{
 tea_text <- "This is a lovely cup of tea"
 
-add_line_breaks(string = tea_text, nword = 2)
+add_line_breaks(text = tea_text, nword = 2)
 
-add_line_breaks(string = tea_text, nword = 3)
+add_line_breaks(text = tea_text, nword = 3)
 
 # Display text in a plot
 plot.new()
 text(
   x = 0.5,
   y = 0.5,
-  labels = add_line_breaks(string = tea_text, nword = 3),
+  labels = add_line_breaks(text = tea_text, nword = 3),
   cex = 1.6
 )
 
@@ -48,7 +48,7 @@ paste0("word",1:100, collapse = " ") \%>\%
 # Define breaks using characters
 message(
   add_line_breaks(
-    "Oh wow. Amazing. I cannot believe that this is actually possible!",
+    text = "Oh wow. Amazing. I cannot believe that this is actually possible!",
     nchar = 10)
   )
 
