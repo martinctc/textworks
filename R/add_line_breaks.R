@@ -15,24 +15,32 @@
 #'   argument from either `nword` or `nchar` is used, otherwise an error is
 #'   generated.
 #' @examples
-#' add_line_breaks("This is a lovely cup of tea", nword = 2)
+#' tea_text <- "This is a lovely cup of tea"
 #'
-#' add_line_breaks("This is a lovely cup of tea", nword = 3)
+#' add_line_breaks(string = tea_text, nword = 2)
+#'
+#' add_line_breaks(string = tea_text, nword = 3)
 #'
 #' # Display text in a plot
 #' plot.new()
 #' text(
 #'   x = 0.5,
 #'   y = 0.5,
-#'   labels = add_line_breaks("This is a lovely cup of tea", nword = 3),
+#'   labels = add_line_breaks(string = tea_text, nword = 3),
 #'   cex = 1.6
 #' )
 #'
 #' # Applying to a long string
-#' paste0("word",1:100, collapse = " ") %>% add_line_breaks(nword = 3)
+#' paste0("word",1:100, collapse = " ") %>%
+#'   add_line_breaks(nword = 3) %>%
+#'   message()
 #'
 #' # Define breaks using characters
-#' add_line_breaks("Oh wow. Amazing. I cannot believe that this is actually possible!", nchar = 10)
+#' message(
+#'   add_line_breaks(
+#'     "Oh wow. Amazing. I cannot believe that this is actually possible!",
+#'     nchar = 10)
+#'   )
 #'
 #' @export
 #'
