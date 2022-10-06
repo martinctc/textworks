@@ -2,7 +2,7 @@ Package: textworks
 Title: All-in-one package for working with text data
 Version: 0.0.0.9000
 Authors@R: person("Martin", "Chan", email = "martinctc@hotmail.com", role = c("aut", "cre"))
-Description: In a nutshell? Do cool things with text data.
+Description: Make text wrangling easier with a set of convenience functions. 
 Depends: R (>= 3.3.3)
 License: GPL-3
 Encoding: UTF-8
@@ -10,9 +10,13 @@ LazyData: true
 RoxygenNote: 7.2.1
 Imports:
 	jsonlite,
-    tidyverse,
-    stringr,
-    NLP,
-    purrr,
-    httr,
-    magrittr, tm, dplyr, tidytext, rlang
+  tidyverse,
+  stringr,
+  NLP,
+  purrr,
+  httr,
+  magrittr,
+  tm,
+  dplyr,
+  tidytext,
+  rlang
