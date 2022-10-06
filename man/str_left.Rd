@@ -15,7 +15,7 @@ str_left(text, n)
 Returns a formatted string.
 }
 \description{
-This is a convenience wrapper function around \code{str_sub()}, and is analagous
+This is a convenience wrapper function around \code{str_sub()}, and is analogous
 to \code{str_right()}.
 }
 \examples{

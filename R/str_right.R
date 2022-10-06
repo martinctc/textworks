@@ -2,7 +2,7 @@
 #' Return the n number of characters from the right
 #'
 #' @description
-#' This is a convenience wrapper function around `str_sub()`, and is analagous
+#' This is a convenience wrapper function around `str_sub()`, and is analogous
 #' to `str_left()`.
 #'
 #' @param text String character to pass through
