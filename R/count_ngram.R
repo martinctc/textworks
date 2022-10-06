@@ -1,26 +1,20 @@
 #' @title
 #' Summarise the counts of a specified ngram in character vector
 #'
-#' @param text Character string vector to pass through
+#' @param text character. Vector containing text to split into n-grams and count.
 #' @param count_col A string vector for the name of the count column. Defaults to "count"
 #' @param n Specify n of ngram
-#' @return A tidy data frame with the count results
-#' @import dplyr
-#' @importFrom magrittr %>%
-#' @importFrom rlang sym
-#' @importFrom rlang !!
-#' @importFrom tidytext unnest_tokens
-#' @importFrom grDevices rgb
+#' @return data frame with the count results, containing two columns:
+#'   - `text`: n-grams identified
+#'   - `count` (unless otherwise specified)
+#'
 #' @examples
 #' count_ngram(c("The quick brown fox jumped over the lazy dog"))
+#'
 #' @export
-count_ngram <- function(text,count_col = "count", n = 2){
-  dplyr::tibble(text = text, line = length(text)) -> ori_tb
+count_ngram <- function(text, count_col = "count", n = 2){
 
-  ori_tb %>%
-    tidytext::unnest_tokens(output = phrase, input = text, token = "ngrams", n = n) %>%
-    dplyr::count(phrase, sort = TRUE) %>%
-    rename(!!sym(count_col):="n") -> ngram_df
+  out <- dplyr::tibble(text = tokenise_ngram(x = text, n = n))
+  dplyr::count(out, text, name = count_col, sort = TRUE)
 
-  ngram_df
 }

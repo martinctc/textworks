@@ -5,6 +5,7 @@
 #' @param pseudo Determines whether groups of special characters are matched. Defaults to FALSE (not matched)
 #'
 #' @importFrom stringr str_count
+#'
 #' @examples
 #' nwords("Oh my what a lovely day. We should all go out and play!")
 #'

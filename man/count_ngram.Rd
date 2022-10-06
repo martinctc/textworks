@@ -7,18 +7,21 @@
 count_ngram(text, count_col = "count", n = 2)
 }
 \arguments{
-\item{text}{Character string vector to pass through}
+\item{text}{character. Vector containing text to split into n-grams and count.}
 
 \item{count_col}{A string vector for the name of the count column. Defaults to "count"}
 
 \item{n}{Specify n of ngram}
 }
 \value{
-A tidy data frame with the count results
+data frame with the count results, containing two columns:
+  - `text`: n-grams identified
+  - `count` (unless otherwise specified)
 }
 \description{
 Summarise the counts of a specified ngram in character vector
 }
 \examples{
 count_ngram(c("The quick brown fox jumped over the lazy dog"))
+
 }
