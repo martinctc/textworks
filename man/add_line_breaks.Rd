@@ -2,24 +2,46 @@
 % Please edit documentation in R/add_line_breaks.R
 \name{add_line_breaks}
 \alias{add_line_breaks}
-\title{Split long sentences into multiple lines by adding line breaks}
+\title{Split long strings into multiple lines by adding line breaks}
 \usage{
-add_line_breaks(string, words)
+add_line_breaks(string, nword = NULL, nchar = NULL)
 }
 \arguments{
 \item{string}{Pass text string here.}
 
-\item{words}{The maximum number of words allowed in the first line}
+\item{nword}{numeric, defaults to NULL. The maximum number of words allowed in the first line. Only one
+argument from either `nword` or `nchar` is used, otherwise an error is
+generated.}
+
+\item{nchar}{numeric, defaults to NULL. Number of character units by which the
+next space would be replaced with `\n` to move text to next line. Only one
+argument from either `nword` or `nchar` is used, otherwise an error is
+generated.}
 }
 \description{
-Split long sentences into multiple lines by adding line breaks
+Wrap text in visualizations according to a preset character
+  threshold, or the maximum number of words allowed in the first line. The
+  next space in the string is replaced with `\n`, which will render as next
+  line in plots and messages.
 }
 \examples{
-library(stringr)
-library(magrittr)
-add_line_breaks("This is a lovely cup of tea",2)
-add_line_breaks("This is a lovely cup of tea",3)
-add_line_breaks("This is a lovely cup of tea",1)
-add_line_breaks("Oh wow. Amazing. I cannot believe that this is actually possible!",4)
-paste0("word",1:100, collapse = " ") \%>\% add_line_breaks(3)
+add_line_breaks("This is a lovely cup of tea", nword = 2)
+
+add_line_breaks("This is a lovely cup of tea", nword = 3)
+
+# Display text in a plot
+plot.new()
+text(
+  x = 0.5,
+  y = 0.5,
+  labels = add_line_breaks("This is a lovely cup of tea", nword = 3),
+  cex = 1.6
+)
+
+# Applying to a long string
+paste0("word",1:100, collapse = " ") \%>\% add_line_breaks(nword = 3)
+
+# Define breaks using characters
+add_line_breaks("Oh wow. Amazing. I cannot believe that this is actually possible!", nchar = 10)
+
 }
