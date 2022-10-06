@@ -1,10 +1,9 @@
 #' @title Convert "CamelCase" to "Camel Case"
 #'
 #' @description
-#' Convert a text string from the format "CamelCase" to "Camel Case".
-#' This is used for converting variable names such as
-#' "LevelDesignation" to "Level Designation" for the purpose
-#' of prettifying plot labels.
+#' Convert a text string from the format "CamelCase" to "Camel Case". This is
+#' used for converting variable names such as "ApplePie" to "Apple Pie" for the
+#' purpose of prettifying plot labels.
 #'
 #' @param string A string vector in 'CamelCase' format to format
 #'
