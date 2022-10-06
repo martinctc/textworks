@@ -1,8 +1,8 @@
 Package: textworks
-Title: All-in-one package for working with text data
+Title: Text Wrangling Tools for Visualisation and Reporting
 Version: 0.1.0
 Authors@R: person("Martin", "Chan", email = "martinctc@hotmail.com", role = c("aut", "cre"))
-Description: Make text wrangling easier with a set of convenience functions. 
+Description: Clean, process, and wrangle text easily with a set of convenience functions. This helps with scenarios such as processing strings for visualization or cleaning up text data at scale.
 Depends: R (>= 3.3.3)
 License: GPL-3
 Encoding: UTF-8
@@ -16,7 +16,5 @@ Imports:
   purrr,
   httr,
   magrittr,
-  tm,
   dplyr,
-  tidytext,
   rlang
