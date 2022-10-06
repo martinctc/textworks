@@ -9,6 +9,9 @@
 #' @importFrom stringr str_split
 #' @importFrom purrr map
 #' @importFrom purrr as_vector
+#'
+#' @return Returns a formatted string.
+#'
 #' @examples
 #' str <- c("sugar", "spice", "everything nice")
 #' str_arrange(text = str)

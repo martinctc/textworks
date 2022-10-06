@@ -12,6 +12,9 @@ str_arrange(text, decreasing = FALSE)
 \item{decreasing}{logical, specifies whether sort is increasing or decreasing.
 See \code{sort()} (base)}
 }
+\value{
+Returns a formatted string.
+}
 \description{
 Sorts letters in a character string by alphabetical order
 }

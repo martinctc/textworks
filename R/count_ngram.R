@@ -8,6 +8,7 @@
 #' @param count_col A string vector for the name of the count column. Defaults
 #'   to `"count"`
 #' @param n Specify n of ngram
+#'
 #' @return data frame with the count results, containing two columns:
 #'   - `ngrams`: n-grams identified
 #'   - `count` (unless otherwise specified)
