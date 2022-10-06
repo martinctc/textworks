@@ -4,10 +4,13 @@
 \alias{sentence_case}
 \title{Convert a string into sentence case}
 \usage{
-sentence_case(string)
+sentence_case(text)
 }
 \arguments{
-\item{string}{A vector of character string to pass through.}
+\item{text}{A vector of character string to pass through.}
+}
+\value{
+Returns a formatted string.
 }
 \description{
 (^|\\.) matches start of string OR literally a fullstop

@@ -13,6 +13,9 @@ rgb2hex(r, g, b)
 
 \item{b}{Value for b}
 }
+\value{
+Returns a formatted string containing HEX code.
+}
 \description{
 Suited for using in viz packages like {wordcloud2}. A convenience wrapper
 around `rgb()`.

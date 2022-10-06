@@ -4,12 +4,15 @@
 \alias{str_left}
 \title{Return the `n` number of characters from the left}
 \usage{
-str_left(x, n)
+str_left(text, n)
 }
 \arguments{
-\item{x}{String character to pass through}
+\item{text}{String character to pass through}
 
 \item{n}{Integer specifying the number of characters to return from the left.}
+}
+\value{
+Returns a formatted string.
 }
 \description{
 This is a convenience wrapper function around `str_sub()`, and is analagous

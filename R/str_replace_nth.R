@@ -6,25 +6,27 @@
 #' a more targetted way of replacing patterns compared to
 #' `stringr::str_replace()` and `stringr::str_replace_all()`.
 #'
-#' @param x Pass string character
+#' @param text Pass string character
 #' @param pattern String containing characters to match
 #' @param replacement String containing characters to replace.
 #' @param n Nth term to be replaced
 #'
+#' @return Returns a formatted string.
+#'
 #' @examples
 #' x <- "pineapplepie"
 #'
-#' str_replace_nth(x = x, pattern = "p", replacement = "q", n = 2)
+#' str_replace_nth(text = x, pattern = "p", replacement = "q", n = 2)
 #'
-#' str_replace_nth(x = "pigpig", pattern = "pig", replacement = "dog", n = 2)
+#' str_replace_nth(text = "pigpig", pattern = "pig", replacement = "dog", n = 2)
 #'
-#' str_replace_nth(x = "pigpig", pattern = "pig", replacement = "gy", n = 2)
+#' str_replace_nth(text = "pigpig", pattern = "pig", replacement = "gy", n = 2)
 #'
 #' @export
-str_replace_nth <- function(x, pattern, replacement, n) {
+str_replace_nth <- function(text, pattern, replacement, n) {
 
   # returns list of matched positions, only single value
-  g <- gregexpr(pattern, x)[[1]][n]
+  g <- gregexpr(pattern, text)[[1]][n]
 
   # get total length of `pattern`
   len_p <- nchar(pattern)
@@ -35,16 +37,7 @@ str_replace_nth <- function(x, pattern, replacement, n) {
             sep = "|",
             what = "")
 
-  ## Debug
-  # print(substr(x, g, g + len_p))
-  # print(s)
-  # print(match(substr(x, g, g + len_r), s))
-  # print(g)
-  # print(g + len_p)
-
-  # substr(x, g, g + len_p) <- replacement[match(substr(x, g, g + len_p), s)]
-  # x
-  firsthalf <- substr(x, start = 1, stop = g - 1)
-  secondhalf <- substr(x, start = g + len_p, stop = nchar(x))
+  firsthalf <- substr(text, start = 1, stop = g - 1)
+  secondhalf <- substr(text, start = g + len_p, stop = nchar(text))
   paste0(firsthalf, replacement, secondhalf)
 }

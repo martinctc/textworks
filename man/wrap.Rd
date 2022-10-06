@@ -4,23 +4,23 @@
 \alias{wrap}
 \title{Add a character at the start and end of a character string}
 \usage{
-wrap(string, wrapper = "\\"")
+wrap(text, wrapper = "\\"")
 }
 \arguments{
-\item{string}{Character string to be wrapped around}
+\item{text}{string to be add 'wrapping' characters.}
 
-\item{wrapper}{Character to wrap around `string`}
+\item{wrapper}{string to be added around value supplied in `text`.}
 }
 \value{
-Character vector containing the modified string.
+Returns a formatted string.
 }
 \description{
-This function adds a character at the start and end of a character
-string, where the default behaviour is to add a double quote.
+Add a character at the start and end of a
+  character string, where the default behaviour is to add a double quote.
 }
-\seealso{
-Other Support: 
-\code{\link{camel_clean}()},
-\code{\link{us_to_space}()}
+\examples{
+wrap(text = "lol")
+
+wrap(text = "lol", wrapper = "lol")
+
 }
-\concept{Support}

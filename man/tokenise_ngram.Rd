@@ -13,6 +13,9 @@ tokenise_ngram(text, n = 2, collapse = " ")
 
 \item{collapse}{Specify what to use for separating the outcome}
 }
+\value{
+Returns a formatted string.
+}
 \description{
 Return all n-gram combinations with a character vector as input
 }

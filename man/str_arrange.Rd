@@ -4,10 +4,10 @@
 \alias{str_arrange}
 \title{Sorts letters in a character string by alphabetical order}
 \usage{
-str_arrange(string, decreasing = FALSE)
+str_arrange(text, decreasing = FALSE)
 }
 \arguments{
-\item{string}{A vector of character string to pass through.}
+\item{text}{A vector of character string to pass through.}
 
 \item{decreasing}{logical, specifies whether sort is increasing or decreasing.
 See `sort()` (base)}
@@ -17,6 +17,6 @@ Sorts letters in a character string by alphabetical order
 }
 \examples{
 str <- c("sugar", "spice", "everything nice")
-str_arrange(str)
+str_arrange(text = str)
 
 }

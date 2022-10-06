@@ -7,7 +7,7 @@
 comma(x)
 }
 \arguments{
-\item{x}{A numeric value}
+\item{x}{numeric value to add thousand separator.}
 }
 \value{
 Returns a formatted string.
@@ -16,5 +16,11 @@ Returns a formatted string.
 Takes a numeric value and returns a character value
 which is rounded to the whole number, and adds a comma
 separator at the thousands. A convenient wrapper function
-around `round()` and `format()`.
+around `scales::label_comma()`.
+}
+\examples{
+comma(1000 * 1000)
+
+comma(20190721)
+
 }

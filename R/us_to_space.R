@@ -2,17 +2,14 @@
 #'
 #' @description Convenience function to convert underscores to space
 #'
-#' @param x String to replace all occurrences of `_` with a single space
+#' @param text String to replace all occurrences of `_` with a single space
 #'
-#' @return
-#' Character vector containing the modified string.
-#'
-#' @family Support
+#' @return Returns a formatted string.
 #'
 #' @examples
 #' us_to_space("Meeting_hours_with_manager_1_on_1")
 #'
 #' @export
-us_to_space <- function(x){
-  gsub(pattern = "_", replacement = " ", x = x)
+us_to_space <- function(text){
+  gsub(pattern = "_", replacement = " ", x = text)
 }

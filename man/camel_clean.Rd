@@ -4,10 +4,10 @@
 \alias{camel_clean}
 \title{Convert "CamelCase" to "Camel Case"}
 \usage{
-camel_clean(string)
+camel_clean(text)
 }
 \arguments{
-\item{string}{A string vector in 'CamelCase' format to format}
+\item{text}{character vector in 'CamelCase' format to format}
 }
 \value{
 Returns a formatted string.
@@ -21,9 +21,3 @@ purpose of prettifying plot labels.
 camel_clean("NoteHowTheStringIsFormatted")
 
 }
-\seealso{
-Other Support: 
-\code{\link{us_to_space}()},
-\code{\link{wrap}()}
-}
-\concept{Support}

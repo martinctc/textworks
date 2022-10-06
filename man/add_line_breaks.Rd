@@ -18,6 +18,9 @@ next space would be replaced with `\n` to move text to next line. Only one
 argument from either `nword` or `nchar` is used, otherwise an error is
 generated.}
 }
+\value{
+Returns a formatted string.
+}
 \description{
 Wrap text in visualizations according to a preset character
   threshold, or the maximum number of words allowed in the first line. The

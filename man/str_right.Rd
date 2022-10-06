@@ -4,12 +4,15 @@
 \alias{str_right}
 \title{Return the n number of characters from the right}
 \usage{
-str_right(x, n)
+str_right(text, n)
 }
 \arguments{
-\item{x}{String character to pass through}
+\item{text}{String character to pass through}
 
 \item{n}{Integer specifying the number of characters to return from the right.}
+}
+\value{
+Returns a formatted string.
 }
 \description{
 This is a convenience wrapper function around `str_sub()`, and is analagous

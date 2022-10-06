@@ -4,13 +4,13 @@
 \alias{us_to_space}
 \title{Replace underscore with space}
 \usage{
-us_to_space(x)
+us_to_space(text)
 }
 \arguments{
-\item{x}{String to replace all occurrences of `_` with a single space}
+\item{text}{String to replace all occurrences of `_` with a single space}
 }
 \value{
-Character vector containing the modified string.
+Returns a formatted string.
 }
 \description{
 Convenience function to convert underscores to space
@@ -19,9 +19,3 @@ Convenience function to convert underscores to space
 us_to_space("Meeting_hours_with_manager_1_on_1")
 
 }
-\seealso{
-Other Support: 
-\code{\link{camel_clean}()},
-\code{\link{wrap}()}
-}
-\concept{Support}

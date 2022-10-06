@@ -8,6 +8,8 @@
 #' @importFrom NLP words
 #' @importFrom NLP ngrams
 #'
+#' @return Returns a formatted string.
+#'
 #' @examples
 #' tokenise_ngram(text = c("apple pies and pear pies", "steak pies and kidney pies"))
 #'

@@ -1,17 +1,19 @@
 #' @title Add a character at the start and end of a character string
 #'
-#' @description This function adds a character at the start and end of a character
-#' string, where the default behaviour is to add a double quote.
+#' @description Add a character at the start and end of a
+#'   character string, where the default behaviour is to add a double quote.
 #'
-#' @param string Character string to be wrapped around
-#' @param wrapper Character to wrap around `string`
+#' @param text string to be add 'wrapping' characters.
+#' @param wrapper string to be added around value supplied in `text`.
 #'
-#' @family Support
+#' @examples
+#' wrap(text = "lol")
 #'
-#' @return
-#' Character vector containing the modified string.
+#' wrap(text = "lol", wrapper = "lol")
+#'
+#' @return Returns a formatted string.
 #'
 #' @export
-wrap <- function(string, wrapper = '"'){
-  paste0(wrapper, string, wrapper)
+wrap <- function(text, wrapper = '"'){
+  paste0(wrapper, text, wrapper)
 }
