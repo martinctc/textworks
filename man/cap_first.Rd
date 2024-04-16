@@ -4,15 +4,18 @@
 \alias{cap_first}
 \title{Capitalise the first letter of all words}
 \usage{
-cap_first(string)
+cap_first(text)
 }
 \arguments{
-\item{string}{String or character vector to pass through.}
+\item{text}{String or character vector to pass through.}
+}
+\value{
+Returns a formatted string.
 }
 \description{
 Capitalise the first letter of all words
 }
 \examples{
-cap_first("steeles pots and pans")
+cap_first(text = "steeles pots and pans")
 
 }

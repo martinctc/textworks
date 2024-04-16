@@ -1,18 +1,21 @@
 Package: textworks
-Title: All-in-one package for working with text data
-Version: 0.0.0.9000
+Title: Text Wrangling Tools for Visualisation and Reporting
+Version: 0.1.0
 Authors@R: person("Martin", "Chan", email = "martinctc@hotmail.com", role = c("aut", "cre"))
-Description: In a nutshell? Do cool things with text data.
+Description: Clean, process, and wrangle text easily with a set of convenience functions. This helps with scenarios such as processing strings for visualization or cleaning up text data at scale.
 Depends: R (>= 3.3.3)
-License: GPL-3
+License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
+Language: en-GB
 RoxygenNote: 7.2.1
+Roxygen: list(markdown = TRUE)
 Imports:
-	jsonlite,
-    tidyverse,
-    stringr,
-    NLP,
-    purrr,
-    httr,
-    magrittr, tm, dplyr, tidytext, rlang
+  stringr,
+  NLP,
+  purrr,
+  magrittr,
+  dplyr,
+  rlang,
+  scales,
+  tm
