@@ -4,15 +4,22 @@
 \alias{tokenise_ngram}
 \title{Return all n-gram combinations with a character vector as input}
 \usage{
-tokenise_ngram(x, n = 2, collapse = " ")
+tokenise_ngram(text, n = 2, collapse = " ")
 }
 \arguments{
-\item{x}{Vector of character string}
+\item{text}{character. Vector containing text to split into n-grams.}
 
 \item{n}{Specifying the n for n-grams, e.g. 2 for bi-grams}
 
 \item{collapse}{Specify what to use for separating the outcome}
 }
+\value{
+Returns a formatted string.
+}
 \description{
 Return all n-gram combinations with a character vector as input
+}
+\examples{
+tokenise_ngram(text = c("apple pies and pear pies", "steak pies and kidney pies"))
+
 }
