@@ -19,3 +19,5 @@ Imports:
   rlang,
   scales,
   tm
+Suggests:
+  testthat (>= 3.0.0)
