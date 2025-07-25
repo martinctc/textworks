@@ -1,0 +1,124 @@
+---
+title: "textworks Function Reference"
+author: "Martin Chan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{textworks Function Reference}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# Load the textworks package
+library(textworks)
+```
+
+## Function Reference
+
+This vignette provides a quick reference for all textworks functions with examples.
+
+### Text Analysis Functions
+
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `nwords()` | Count words in text | `nwords("hello world")` → `2` |
+
+```{r nwords-demo}
+# Basic word counting
+nwords("The quick brown fox")
+nwords("Test@email.com", pseudo = TRUE)  # Include non-alphabetic
+```
+
+### Text Formatting Functions
+
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `cap_first()` | Capitalize first letters | `cap_first("hello world")` → `"Hello World"` |
+| `sentence_case()` | Convert to sentence case | `sentence_case("hello. world")` → `"Hello. World"` |
+
+```{r formatting-demo}
+cap_first("text wrangling tools")
+sentence_case("this is great. really useful.")
+```
+
+### String Manipulation Functions
+
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `str_left()` | Extract from left | `str_left("hello", 3)` → `"hel"` |
+| `str_right()` | Extract from right | `str_right("hello", 3)` → `"llo"` |
+| `str_replace_nth()` | Replace nth occurrence | `str_replace_nth("test test", "test", "demo", 2)` |
+
+```{r string-demo}
+str_left("textworks", 4)
+str_right("textworks", 5)
+str_replace_nth("foo foo foo", "foo", "bar", n = 2)
+```
+
+### Text Cleaning Functions
+
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `camel_clean()` | Fix CamelCase | `camel_clean("CamelCase")` → `"Camel Case"` |
+| `us_to_space()` | Replace underscores | `us_to_space("hello_world")` → `"hello world"` |
+| `wrap()` | Add wrapper characters | `wrap("text", "*")` → `"*text*"` |
+
+```{r cleaning-demo}
+camel_clean("MyVariableName")
+us_to_space("file_name_example")
+wrap("important", "**")
+```
+
+### Advanced Functions
+
+| Function | Purpose | Example |
+|----------|---------|---------|
+| `add_line_breaks()` | Add line breaks | `add_line_breaks("long text here", nword = 2)` |
+| `count_ngram()` | Count n-grams | `count_ngram("hello world hello", n = 2)` |
+| `comma()` | Format numbers | `comma(1000)` → `"1,000"` |
+| `rgb2hex()` | Convert RGB to hex | `rgb2hex(255, 0, 0)` → `"#FF0000"` |
+
+```{r advanced-demo}
+add_line_breaks("This is a long sentence that needs breaks", nword = 3)
+count_ngram("the quick brown fox", n = 2)
+comma(1234567)
+rgb2hex(100, 150, 200)
+```
+
+## Quick Examples by Use Case
+
+### Data Cleaning Pipeline
+```{r pipeline}
+# Clean messy variable names
+messy_names <- c("customer_Name", "totalRevenue", "satisfaction_Score")
+clean_names <- messy_names %>%
+  us_to_space() %>%
+  camel_clean() %>%
+  cap_first()
+
+data.frame(Original = messy_names, Cleaned = clean_names)
+```
+
+### Text Analysis
+```{r analysis}
+text <- "R is great for data analysis and visualization"
+cat("Words:", nwords(text))
+cat("\nBigrams:\n")
+print(count_ngram(text, n = 2))
+```
+
+### Formatting for Display
+```{r display}
+value <- 1234567
+formatted <- comma(value)
+wrapped <- wrap(formatted, "$")
+cat("Formatted currency:", wrapped)
+```

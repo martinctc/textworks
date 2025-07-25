@@ -1,0 +1,143 @@
+---
+title: "Common Text Processing Tasks with textworks"
+author: "Martin Chan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Common Text Processing Tasks with textworks}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# Load the textworks package
+library(textworks)
+```
+
+## Common Text Processing Workflows
+
+This vignette demonstrates practical applications of textworks functions for common text processing tasks you might encounter in data analysis and visualization.
+
+### Cleaning Survey Responses
+
+```{r survey-cleaning}
+# Raw survey responses with various formatting issues
+responses <- c(
+  "very_satisfied_with_service",
+  "somewhatDissatisfied",
+  "neutralResponse", 
+  "EXTREMELY_SATISFIED",
+  "not_sure_about_this"
+)
+
+# Clean and standardize the responses
+cleaned_responses <- responses %>%
+  us_to_space() %>%           # Remove underscores
+  camel_clean() %>%           # Fix CamelCase
+  sentence_case()             # Standardize capitalization
+
+data.frame(
+  Original = responses,
+  Cleaned = cleaned_responses
+)
+```
+
+### Preparing Text for Visualization
+
+```{r viz-prep}
+# Long category names that need line breaks for plots
+category_names <- c(
+  "Customer Service and Support Quality Assessment",
+  "Product Development and Innovation Strategy",
+  "Marketing and Brand Management Effectiveness"
+)
+
+# Add line breaks for better display in charts
+short_names <- sapply(category_names, function(x) {
+  add_line_breaks(x, nword = 3)
+})
+
+cat("Original vs. Formatted:\n")
+for(i in 1:length(category_names)) {
+  cat("\nOriginal:", category_names[i])
+  cat("\nFormatted:\n", short_names[i], "\n")
+}
+```
+
+### Processing File Names and Paths
+
+```{r file-processing}
+# Messy file names that need cleaning
+file_names <- c(
+  "data_analysis_report_2023.xlsx",
+  "customerFeedbackSummary.pdf",
+  "QUARTERLY_RESULTS_Q4.pptx"
+)
+
+# Create clean display names
+display_names <- file_names %>%
+  # Remove file extensions for display
+  sub("\\.[^.]*$", "", .) %>%
+  # Clean formatting
+  us_to_space() %>%
+  camel_clean() %>%
+  cap_first()
+
+data.frame(
+  File = file_names,
+  Display = display_names
+)
+```
+
+### Text Analysis and Metrics
+
+```{r text-analysis}
+# Sample text for analysis
+sample_text <- "The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once."
+
+# Basic text metrics
+cat("Text Analysis:\n")
+cat("Total words:", nwords(sample_text), "\n")
+cat("Total characters:", nchar(sample_text), "\n")
+cat("First 20 characters:", str_left(sample_text, 20), "\n")
+cat("Last 15 characters:", str_right(sample_text, 15), "\n")
+
+# Analyze word patterns
+cat("\nMost common bigrams:\n")
+print(count_ngram(sample_text, n = 2))
+```
+
+### Creating Formatted Output
+
+```{r formatted-output}
+# Data that needs formatting for reports
+metrics <- data.frame(
+  metric = c("total_users", "monthly_revenue", "customer_satisfaction"),
+  value = c(125000, 2500000, 87.5)
+)
+
+# Format the metrics nicely
+metrics$formatted_metric <- cap_first(us_to_space(metrics$metric))
+metrics$formatted_value <- ifelse(
+  metrics$metric == "customer_satisfaction",
+  paste0(metrics$value, "%"),
+  comma(metrics$value)
+)
+
+# Display formatted results
+cat("Formatted Metrics Report:\n")
+for(i in 1:nrow(metrics)) {
+  cat(sprintf("%s: %s\n", 
+              metrics$formatted_metric[i], 
+              metrics$formatted_value[i]))
+}
+```
+
+This vignette shows how textworks functions can be combined to solve real-world text processing challenges efficiently and cleanly.

@@ -20,4 +20,7 @@ Imports:
   scales,
   tm
 Suggests:
-  testthat (>= 3.0.0)
+  testthat (>= 3.0.0),
+  knitr,
+  rmarkdown
+VignetteBuilder: knitr

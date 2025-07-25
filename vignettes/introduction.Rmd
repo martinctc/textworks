@@ -1,0 +1,285 @@
+---
+title: "Introduction to textworks: Text Wrangling with Wittgenstein"
+author: "Martin Chan"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to textworks: Text Wrangling with Wittgenstein}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+# Load the textworks package
+# For development: devtools::load_all()
+library(textworks)
+```
+
+## Introduction
+
+The **textworks** package provides a collection of convenient functions for text wrangling, cleaning, and processing. These tools are particularly useful for preparing text data for visualization and reporting. 
+
+In this vignette, we'll explore the main functions using quotes from the Austrian philosopher Ludwig Wittgenstein (1889-1951) as our example text. Wittgenstein's profound insights into language and logic make for perfect examples when demonstrating text manipulation techniques.
+
+## Text Analysis Functions
+
+### Counting Words
+
+Let's start with one of Wittgenstein's most famous quotes about the limits of language:
+
+```{r word-counting}
+# A famous Wittgenstein quote
+quote1 <- "The limits of my language mean the limits of my world."
+
+# Count the number of words
+nwords(quote1)
+
+# Compare with a longer quote about language games
+quote2 <- "Language is a labyrinth of paths. You approach from one side and know your way about; you approach the same place from another side and no longer know your way about."
+
+nwords(quote2)
+
+# Count words including pseudo-words (numbers, special characters)
+mixed_text <- "In Tractus 6.54, Wittgenstein wrote about the ladder metaphor."
+nwords(mixed_text)  # Only alphabetic words
+nwords(mixed_text, pseudo = TRUE)  # Including numbers and symbols
+```
+
+## Text Formatting Functions
+
+### Capitalizing Text
+
+Wittgenstein's aphorisms often need proper formatting for quotes:
+
+```{r capitalization}
+# A quote that needs proper capitalization
+quote3 <- "whereof one cannot speak, thereof one must be silent."
+
+# Capitalize the first letter of each word
+cap_first(quote3)
+
+# Convert to proper sentence case
+sentence_case(quote3)
+
+# Compare the difference
+original <- "death is not an event in life: we do not live to experience death."
+cat("Original:", original, "\n")
+cat("Title Case:", cap_first(original), "\n")
+cat("Sentence Case:", sentence_case(original), "\n")
+```
+
+### Working with CamelCase
+
+Philosophy texts often contain technical terms that need cleaning:
+
+```{r camelcase}
+# Philosophical terms in CamelCase format
+terms <- c("LanguageGame", "FormOfLife", "PictureTheory", "LogicalPositivism")
+
+# Convert to readable format
+camel_clean(terms)
+
+# Useful for creating readable labels
+philosophical_concepts <- "Wittgenstein explored LanguageGames and FormsOfLife in his later work."
+camel_clean(philosophical_concepts)
+```
+
+## String Manipulation Functions
+
+### Extracting Parts of Strings
+
+Sometimes we need to work with parts of longer philosophical texts:
+
+```{r string-extraction}
+# A longer Wittgenstein quote
+quote4 <- "Philosophy is a battle against the bewitchment of our intelligence by means of language."
+
+# Get the first 10 characters
+str_left(quote4, 10)
+
+# Get the last 12 characters  
+str_right(quote4, 12)
+
+# Extract different portions for analysis
+str_left(quote4, 20)  # "Philosophy is a batt"
+str_right(quote4, 20)  # "means of language."
+```
+
+### String Replacement
+
+Wittgenstein's works were published in different editions with varying punctuation:
+
+```{r string-replacement}
+# Original quote with repeated word
+quote5 <- "Language language language is the source of all philosophical problems."
+
+# Replace the 2nd occurrence of "language"
+str_replace_nth(quote5, "language", "itself", n = 2)
+
+# Replace the 3rd occurrence 
+str_replace_nth(quote5, "language", "communication", n = 3)
+```
+
+### Converting Underscores and Adding Wrappers
+
+Working with file names and formatted text:
+
+```{r underscore-and-wrapping}
+# File names from Wittgenstein's works
+file_names <- c("tractus_logico_philosophicus", "philosophical_investigations", "blue_and_brown_books")
+
+# Convert underscores to spaces
+us_to_space(file_names)
+
+# Add quotation marks around philosophical concepts
+concepts <- c("language game", "form of life", "private language")
+wrap(concepts)
+
+# Use custom wrappers for emphasis
+wrap("The world is everything that is the case", wrapper = "**")
+```
+
+## Advanced Text Processing
+
+### Adding Line Breaks
+
+For displaying long quotes in visualizations:
+
+```{r line-breaks}
+# A lengthy Wittgenstein quote
+long_quote <- "A picture held us captive. And we could not get outside it, for it lay in our language and language seemed to repeat it to us inexorably."
+
+# Break after every 3 words for narrow displays
+add_line_breaks(long_quote, nword = 3)
+
+# Break after approximately every 25 characters
+add_line_breaks(long_quote, nchar = 25)
+```
+
+### Working with N-grams
+
+Analyze the structure of Wittgenstein's language:
+
+```{r ngrams}
+# Analyze word patterns in a famous passage
+passage <- "What we cannot speak about we must pass over in silence"
+
+# Generate and count bigrams (2-word combinations)
+count_ngram(passage, n = 2)
+
+# Generate trigrams (3-word combinations)  
+count_ngram(passage, n = 3)
+
+# Look at single words with custom column name
+count_ngram(passage, n = 1, count_col = "frequency")
+```
+
+## Utility Functions
+
+### Number Formatting
+
+When referencing philosophical works and dates:
+
+```{r number-formatting}
+# Publication dates and page numbers
+tractus_year <- 1921
+investigations_pages <- 1953
+
+# Format with commas for readability
+comma(tractus_year)  # Though not needed for 4 digits
+comma(investigations_pages)
+
+# More relevant for larger numbers
+words_in_investigations <- 89000
+comma(words_in_investigations)
+```
+
+### Color Conversion for Visualizations
+
+Converting RGB values to hex codes for themed visualizations:
+
+```{r color-conversion}
+# Create a philosophical color palette
+# Deep blue for logic
+logic_blue <- rgb2hex(25, 25, 112)
+
+# Warm brown for earthly concerns  
+earthly_brown <- rgb2hex(139, 69, 19)
+
+# Show the hex codes
+logic_blue
+earthly_brown
+```
+
+## Practical Example: Processing a Complete Quote
+
+Let's put it all together with a complete workflow:
+
+```{r complete-example}
+# Raw text that needs processing
+raw_quote <- "the_philosopher_treats_a_question_like_an_illness"
+
+# Step 1: Convert underscores to spaces
+step1 <- us_to_space(raw_quote)
+cat("Step 1 - Remove underscores:", step1, "\n")
+
+# Step 2: Capitalize properly
+step2 <- cap_first(step1)
+cat("Step 2 - Capitalize:", step2, "\n")
+
+# Step 3: Add quotation marks
+step3 <- wrap(step2)
+cat("Step 3 - Add quotes:", step3, "\n")
+
+# Step 4: Count words for metadata
+word_count <- nwords(step1)
+cat("Word count:", word_count, "\n")
+
+# Create a formatted display
+cat("\nFormatted quote:")
+cat("\n", step3)
+cat("\n- Ludwig Wittgenstein")
+cat("\n(", word_count, "words)\n")
+```
+
+## Working with Multiple Quotes
+
+Finally, let's process a collection of Wittgenstein quotes:
+
+```{r multiple-quotes}
+# Collection of quotes in various formats
+quotes_raw <- c(
+  "the_world_is_the_totality_of_facts",
+  "whereof one cannot speak thereof one must be silent", 
+  "languageGames are forms of life",
+  "a picture is a model of reality"
+)
+
+# Process all quotes
+quotes_processed <- quotes_raw %>%
+  us_to_space() %>%          # Remove underscores
+  camel_clean() %>%          # Fix CamelCase  
+  sentence_case() %>%        # Proper sentence capitalization
+  wrap()                     # Add quotation marks
+
+# Display the results
+for(i in 1:length(quotes_processed)) {
+  cat(quotes_processed[i], "\n")
+  cat("(", nwords(quotes_raw[i]), "words)\n\n")
+}
+```
+
+## Conclusion
+
+The **textworks** package provides a comprehensive toolkit for text manipulation in R. Whether you're preparing text for visualization, cleaning data for analysis, or formatting content for reports, these functions offer convenient and intuitive solutions.
+
+As Wittgenstein might have said about good tools: "The tool does not draw attention to itself, but enables the work to be done." The textworks functions are designed to be simple, reliable, and focused on getting your text processing tasks completed efficiently.
+
+For more information about specific functions, use `?function_name` or explore the package documentation.
