@@ -4,17 +4,21 @@
 \alias{nwords}
 \title{Count the number of words in text string}
 \usage{
-nwords(string, pseudo = FALSE)
+nwords(text, pseudo = FALSE)
 }
 \arguments{
-\item{string}{Pass text string here.}
+\item{text}{Pass text string here.}
 
-\item{pseudo}{Determines whether groups of special characters are matched. Defaults to FALSE (not matched)}
+\item{pseudo}{Determines whether groups of special characters are matched.
+Defaults to \code{FALSE} (not matched)}
+}
+\value{
+numeric value containing count of words.
 }
 \description{
 Count the number of words in text string
 }
 \examples{
-nwords("Oh my what a lovely day. We should all go out and play!")
+nwords(text = "Oh my what a lovely day. We should all go out and play!")
 
 }

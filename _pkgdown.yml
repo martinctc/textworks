@@ -1,0 +1,37 @@
+url: https://martinctc.github.io/textworks/
+template:
+  bootstrap: 5
+
+reference:
+- title: "String Manipulation"
+  desc: "Functions for manipulating and transforming strings"
+  contents:
+  - str_arrange
+  - str_left
+  - str_right
+  - str_replace_nth
+  - cap_first
+  - sentence_case
+  - camel_clean
+
+- title: "Text Processing"
+  desc: "Functions for processing and analyzing text"
+  contents:
+  - nwords
+  - count_ngram
+  - tokenise_ngram
+  - add_line_breaks
+  - wrap
+  - us_to_space
+
+- title: "Utilities"
+  desc: "Utility and helper functions"
+  contents:
+  - comma
+  - rgb2hex
+  - "`%>%`"
+
+- title: "Internal"
+  desc: "Internal functions"
+  contents:
+  - subset_from_match

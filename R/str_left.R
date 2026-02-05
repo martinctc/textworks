@@ -1,10 +1,14 @@
-#' Return the n number of characters from the left
+#' @title
+#' Return the `n` number of characters from the left
 #'
-#' Wrapper convenience function
-#' Analagous to `str_right()`
+#' @description
+#' This is a convenience wrapper function around `str_sub()`, and is analogous
+#' to `str_right()`.
 #'
-#' @param x String character to pass through
+#' @param text String character to pass through
 #' @param n Integer specifying the number of characters to return from the left.
+#'
+#' @return Returns a formatted string.
 #'
 #' @importFrom stringr str_sub
 #'
@@ -12,6 +16,6 @@
 #' str_left("Wittgenstein", 7)
 #'
 #' @export
-str_left <- function(x, n){
-  str_sub(x, 1, n)
+str_left <- function(text, n){
+  str_sub(text, 1, n)
 }

@@ -1,7 +1,6 @@
 # textworks
 
 [![R build status](https://github.com/martinctc/textworks/workflows/R-CMD-check/badge.svg)](https://github.com/martinctc/textworks/actions)
-
 [![CodeFactor](https://www.codefactor.io/repository/github/martinctc/textworks/badge)](https://www.codefactor.io/repository/github/martinctc/textworks)
 
 Useful functions for handling text data. 
