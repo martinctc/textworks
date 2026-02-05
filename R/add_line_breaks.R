@@ -63,10 +63,21 @@ add_line_breaks <-  function(text, nword = NULL, nchar = NULL) {
 
   } else if(!is.null(nword)){
 
+    # Handle empty string
+    if(text == "") {
+      return("")
+    }
+
     words_list <- unlist(stringr::str_split(text, " "))
+    nwords_val <- nwords(text)
 
     # Return index of spaces to insert line break
-    ind <- which(sapply(1:nwords(text), function(x) x %%  nword) == 0)
+    ind <- which(sapply(1:nwords_val, function(x) x %%  nword) == 0)
+
+    # If no breaks, return original with trailing space + newline
+    if(length(ind) == 0) {
+      return(paste0(text, " \n"))
+    }
 
     for(i in 0:(length(ind)-1)){
       new_index <- ind[i + 1] + i
@@ -74,20 +85,56 @@ add_line_breaks <-  function(text, nword = NULL, nchar = NULL) {
       words_list <- append(words_list, "\n", after = new_index)
     }
 
-    paste0(words_list, collapse = " ")
+    result <- paste0(words_list, collapse = " ")
+    
+    # If result doesn't end with " \n", add it
+    if(!grepl(" \\n$", result)) {
+      result <- paste0(result, " \n")
+    }
+    
+    result
 
   } else if(!is.null(nchar)){
 
+    # Handle empty string - return newline for consistency
+    if(text == "") {
+      return("\n")
+    }
+
+    # Split string into chunks of nchar length
+    chars <- strsplit(text, "")[[1]]
+    n_chars <- length(chars)
+    
+    # If there are no characters or only whitespace, use simple pattern
+    if(n_chars == 0 || grepl("^\\s*$", text)) {
+      return("\n")
+    }
+    
+    # Check if string contains no spaces (needs character-based splitting)
+    if(!grepl(" ", text)) {
+      # Split at exact character positions
+      result <- ""
+      for(i in seq(1, n_chars, by = nchar)) {
+        end_pos <- min(i + nchar - 1, n_chars)
+        chunk <- paste0(chars[i:end_pos], collapse = "")
+        result <- paste0(result, chunk, "\n")
+      }
+      return(result)
+    }
+    
+    # For strings with spaces, use word-boundary pattern
     patt <- paste0(
       '(.{1,',
       nchar,
       '})(\\s|$)'
     )
 
-    gsub(
+    result <- gsub(
       pattern = patt,
       replacement = '\\1\n',
       x = text
     )
+    
+    result
   }
   }

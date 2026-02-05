@@ -17,7 +17,7 @@ rgb2hex(r, g, b)
 Returns a formatted string containing HEX code.
 }
 \description{
-Suited for using in viz packages like {wordcloud2}. A convenience wrapper
+Suited for using in viz packages like \{wordcloud2\}. A convenience wrapper
 around \code{rgb()}.
 }
 \examples{

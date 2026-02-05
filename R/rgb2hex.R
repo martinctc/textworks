@@ -2,7 +2,7 @@
 #' Convert RGB values to HEX colour codes
 #'
 #' @description
-#' Suited for using in viz packages like {wordcloud2}. A convenience wrapper
+#' Suited for using in viz packages like \{wordcloud2\}. A convenience wrapper
 #' around `rgb()`.
 #'
 #' @param r Value for r

@@ -3,10 +3,10 @@ test_that("add_line_breaks adds line breaks correctly", {
   
   # Basic functionality with nword
   expect_equal(add_line_breaks(text = tea_text, nword = 2), 
-               "This is \n a lovely \n cup of \n tea")
+               "This is \n a lovely \n cup of \n tea \n")
   
   expect_equal(add_line_breaks(text = tea_text, nword = 3), 
-               "This is a \n lovely cup of \n tea")
+               "This is a \n lovely cup of \n tea \n")
   
   # Basic functionality with nchar
   expect_equal(add_line_breaks(text = "Hello world test", nchar = 5), 
