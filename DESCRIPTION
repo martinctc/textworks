@@ -3,6 +3,8 @@ Title: Text Wrangling Tools for Visualisation and Reporting
 Version: 0.1.0
 Authors@R: person("Martin", "Chan", email = "martinctc@hotmail.com", role = c("aut", "cre"))
 Description: Clean, process, and wrangle text easily with a set of convenience functions. This helps with scenarios such as processing strings for visualization or cleaning up text data at scale.
+URL: https://martinctc.github.io/textworks/, https://github.com/martinctc/textworks
+BugReports: https://github.com/martinctc/textworks/issues
 Depends: R (>= 3.3.3)
 License: GPL (>= 3)
 Encoding: UTF-8
